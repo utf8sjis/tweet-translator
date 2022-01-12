@@ -1,8 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flask_restful import Api, Resource
 
-import config
-from api import DeeplAPI
+from api import DeeplAPI, get_keys
 
 
 class DeeplTranslate(Resource):
@@ -14,9 +13,10 @@ class DeeplTranslate(Resource):
     """
     def post(self):
         input_data = request.json
-        
-        deepl_api = DeeplAPI(config.DEEPL_API_KEY)
-        
+
+        config = get_keys()
+        deepl_api = DeeplAPI(config['DEEPL_API_KEY'])
+
         translated_text = deepl_api.translate(
             input_data['tweetText'],
             input_data['translateLang'])

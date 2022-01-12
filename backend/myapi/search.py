@@ -1,8 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flask_restful import Api, Resource
 
-import config
-from api import TwitterAPI
+from api import TwitterAPI, get_keys
 
 
 class SearchTweets(Resource):
@@ -15,8 +14,12 @@ class SearchTweets(Resource):
     def post(self):
         input_data = request.json
 
-        twitter_api = TwitterAPI(config.TWITTER_API_KEY, config.TWITTER_API_KEY_SECRET,
-                config.TWITTER_ACCESS_TOKEN, config.TWITTER_ACCESS_TOKEN_SECRET)
+        config = get_keys()
+        twitter_api = TwitterAPI(
+            config['TWITTER_API_KEY'],
+            config['TWITTER_API_KEY_SECRET'],
+            config['TWITTER_ACCESS_TOKEN'],
+            config['TWITTER_ACCESS_TOKEN_SECRET'])
         tweet_list = twitter_api.search(
             input_data['searchWord'],
             input_data['searchLang'])

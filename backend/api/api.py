@@ -4,6 +4,27 @@ import pytz
 import deepl
 
 
+def get_keys():
+    try:
+        import config
+        return {
+            'DEEPL_API_KEY': config.DEEPL_API_KEY,
+            'TWITTER_API_KEY': config.TWITTER_API_KEY,
+            'TWITTER_API_KEY_SECRET': config.TWITTER_API_KEY_SECRET,
+            'TWITTER_ACCESS_TOKEN': config.TWITTER_ACCESS_TOKEN,
+            'TWITTER_ACCESS_TOKEN_SECRET': config.TWITTER_ACCESS_TOKEN_SECRET,
+        }
+    except ImportError:
+        import os
+        return {
+            'DEEPL_API_KEY': os.environ['DEEPL_API_KEY'],
+            'TWITTER_API_KEY': os.environ['TWITTER_API_KEY'],
+            'TWITTER_API_KEY_SECRET': os.environ['TWITTER_API_KEY_SECRET'],
+            'TWITTER_ACCESS_TOKEN': os.environ['TWITTER_ACCESS_TOKEN'],
+            'TWITTER_ACCESS_TOKEN_SECRET': os.environ['TWITTER_ACCESS_TOKEN_SECRET'],
+        }
+
+
 class TwitterAPI():
     """
     TwitterのAPIを使って処理を行うメソッドをまとめたクラス
