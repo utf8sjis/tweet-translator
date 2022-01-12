@@ -8,6 +8,7 @@ flask = "*"
 flask-restful = "*"
 tweepy = "*"
 deepl = "*"
+gunicorn = "*"
 
 [dev-packages]
 
