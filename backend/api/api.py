@@ -1,9 +1,14 @@
 import tweepy
 from datetime import datetime, timezone
 import pytz
+import deepl
 
 
-class twitterAPI():
+class TwitterAPI():
+    """
+    TwitterのAPIを使って処理を行うメソッドをまとめたクラス
+    コンストラクタの引数でAPIのキーを受け取り、OAuth認証を行う
+    """
     def __init__(self, api_key, api_key_secret, access_token, access_token_secret):
         auth = tweepy.OAuthHandler(api_key, api_key_secret)
         auth.set_access_token(access_token, access_token_secret)
@@ -43,3 +48,18 @@ class twitterAPI():
             })
 
         return tweet_list
+
+
+class DeeplAPI():
+    """
+    DeepLのAPIを使って処理を行うメソッドをまとめたクラス
+    コンストラクタの引数でAPIのキーを受け取り、OAuth認証を行う
+    """
+    def __init__(self, api_key):
+        self.translator = deepl.Translator(api_key)
+
+    def translate(self, source_text, target_lang):
+        result = self.translator.translate_text(source_text, target_lang=target_lang) 
+        translated_text = result.text
+
+        return translated_text

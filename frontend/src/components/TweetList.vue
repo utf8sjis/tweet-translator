@@ -92,7 +92,7 @@ export default {
       }
 
       axios
-        .post('/api/deepl/translate', data)
+        .post('/api/translate', data)
         .then((response) => {
           this.$emit('update-translated-data', response.data)
           this.$emit('toggle-translating', false)

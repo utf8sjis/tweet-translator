@@ -62,7 +62,7 @@ export default {
       }
 
       axios
-        .post('/api/twitter/search', sendData)
+        .post('/api/search', sendData)
         .then((response) => {
           this.$emit('update-tweet-list', response.data)
           this.$emit('toggle-searching', false)
