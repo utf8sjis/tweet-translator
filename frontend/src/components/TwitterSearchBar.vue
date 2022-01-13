@@ -1,3 +1,9 @@
+/*
+検索ワードの入力と言語の設定、ツイートの検索の実行を行う部分のコンポーネント
+検索中かの状況と検索結果を渡す
+検索の実行はaxiosを使って独自のAPIを通して行う
+*/
+
 <template>
   <v-container>
     <v-row align="center" justify="center">
@@ -50,9 +56,6 @@ export default {
   }),
 
   methods: {
-    /**
-     * 検索
-     */
     searchTweets: function () {
       this.$emit('toggle-searching', true)
 

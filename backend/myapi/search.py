@@ -6,8 +6,9 @@ from api import TwitterAPI, get_keys
 
 class SearchTweets(Resource):
     """
-    リクエストのパラメータをもとにTwitterのAPIを叩き、
-    取得した情報を整形して返す独自のAPI
+    メソッド: POST, URI: /api/search
+    検索ワードと言語のデータをもとにTwitterのAPIにアクセスして検索を行い、
+    取得したツイートのデータを整形して返す独自のAPI
     TwitterのAPIは自作のapiパッケージのモジュールから
     TwitterAPIクラスをインポートして使っている
     """
@@ -20,6 +21,7 @@ class SearchTweets(Resource):
             config['TWITTER_API_KEY_SECRET'],
             config['TWITTER_ACCESS_TOKEN'],
             config['TWITTER_ACCESS_TOKEN_SECRET'])
+
         tweet_list = twitter_api.search(
             input_data['searchWord'],
             input_data['searchLang'])

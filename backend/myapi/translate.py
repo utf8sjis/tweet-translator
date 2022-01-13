@@ -6,8 +6,9 @@ from api import DeeplAPI, get_keys
 
 class DeeplTranslate(Resource):
     """
-    リクエストのパラメータをもとにDeepLのAPIを叩き、
-    取得した情報を整形して返す独自のAPI。
+    メソッド: POST, URI: /api/translate
+    ツイート文と目的言語のデータをもとにDeepLのAPIにアクセスして翻訳を行い、
+    取得した翻訳データから訳文を抜き出して返す独自のAPI
     DeepLのAPIは自作のapiパッケージのモジュールから
     DeeplAPIクラスをインポートして使っている
     """
@@ -20,7 +21,6 @@ class DeeplTranslate(Resource):
         translated_text = deepl_api.translate(
             input_data['tweetText'],
             input_data['translateLang'])
-
         result_data = {
             'text': translated_text
         }

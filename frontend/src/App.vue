@@ -1,3 +1,9 @@
+/*
+ツイートの検索を行うTwitterSearchBar、ツイートの表示を行うTweetList、
+訳文の表示を行うTranslationDisplayの3つのコンポーネントを子に持ち、
+それぞれのデータの受け渡しの仲介を行っている。
+*/
+
 <template>
   <v-app>
     <v-container class="py-10">

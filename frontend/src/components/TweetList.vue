@@ -1,3 +1,10 @@
+/*
+ツイートの表示と翻訳の実行を行う部分のコンポーネント
+検索中かの真偽値とツイートのリスト、翻訳の目的言語情報を受け取り、
+翻訳中かの状況と翻訳結果を渡す
+翻訳の実行はaxiosを使って独自のAPIを通して行う
+*/
+
 <template>
   <div>
     <v-toolbar dark color="cyan">
@@ -80,9 +87,6 @@ export default {
   }),
 
   methods: {
-    /**
-     * 翻訳
-     */
     translateTweet: function (tweetText) {
       this.$emit('toggle-translating', true)
 
