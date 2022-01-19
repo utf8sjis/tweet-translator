@@ -7,9 +7,11 @@ This is a simple SPA that uses the Twitter API and DeepL API to search for tweet
 
 Herokuへのデプロイを想定して実装を行っています（現在はAPIの制限等があるため公開は行っていません）。
 
-# root
+# Files and Directories
 
-## Pipfile, Pipfile.lock
+## root
+
+### Pipfile, Pipfile.lock
 使用しているPythonライブラリの管理をpipenvで行うためのファイル
 
 * Flask: ウェブアプリケーションフレームワーク
@@ -18,46 +20,46 @@ Herokuへのデプロイを想定して実装を行っています（現在はAP
 * deepl: DeepL API用のライブラリ
 * Gunicorn: WSGIを実装するHTTPサーバーのライブラリ。Flaskをサーバ上で動かす
 
-## Procfile
+### Procfile
 Herokuでサーバを立てるためにHeroku側で実行するコマンドを指定するファイル
 
-## requirements.txt
+### requirements.txt
 Heroku上にインストールするPythonライブラリのリストを指定するファイル
 
-## runtime.txt
+### runtime.txt
 Herokuで走らせるPythonのバージョンを指定するファイル
 
-# backend
+## backend
 Pythonで記述。フレームワークにはFlaskを使用。REST APIを実装し、クライアントからのリクエストに応える
 
-## main.py
+### main.py
 サーバ上でアプリを走らせるためのエントリポイントとなるプログラム
 
-## config.py（未追跡）
+### config.py（未追跡）
 APIキー等を管理するモジュール
 
-## myapi
+### myapi
 自作のREST APIのモジュールをまとめたパッケージ
 
-## api
+### api
 外部APIとやり取りするクラスなどをまとめたパッケージ
 
-# frontend
+## frontend
 Vue CLIを使ったVue.jsのフロントエンド開発場所。ビルドするとコードをdistディレクトリに展開する。以下のファイルは基本的にVue CLIが自動的に生成するテンプレートが元になっている
 
-## .browserslistrc
+### .browserslistrc
 CSSで付与するベンダープレフィクスに関して、サポートするブラウザの範囲を指定するファイル
 
-## .editorconfig
+### .editorconfig
 コーディングスタイルに関する設定ファイル
 
-## .eslintrc.js
+### .eslintrc.js
 ESLint関連の設定ファイル
 
-## babel.config.js
+### babel.config.js
 Babel関連の設定ファイル
 
-## package.json, package-lock.json
+### package.json, package-lock.json
 使用しているJavaScriptライブラリの管理をnpmで行うためのファイル。Vue CLIが自動的に生成するため、今回使用しなかったライブラリも含まれている（VuexやSassなど）
 
 * Vue.js: UI設計のJavaScriptフレームワーク
@@ -66,14 +68,14 @@ Babel関連の設定ファイル
 * ESLint: JavaScriptの静的コード分析ツール。保守性の低いコードや危ないコードを指摘してくる
 * Babel: JavaScriptトランスコンパイラ。古いJavaScriptの書き方に変換する
 
-## vue.config.js
+### vue.config.js
 Vue関連の設定ファイル
 
-## public
+### public
 index.htmlやfaviconの配置場所。index.htmlにVueで作成したアプリが展開される
 
-## src
+### src
 Vueのソース。main.jsをエントリポイントとし、App.vueとそれに依存するコンポーネントを置く
 
-# dist
+## dist
 frontendでビルドしたコードを展開する場所。Flaskではここをレスポンスのテンプレートのフォルダとしている
