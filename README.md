@@ -1,9 +1,11 @@
 # Tweet Translator
-Twitter APIとDeepL APIを使用して、ツイートの検索とその翻訳を一画面で行うシンプルなSPA
+Twitter APIとDeepL APIを使用してツイートの検索とその翻訳を一画面で行うシンプルなSPAです。
+
+This is a simple SPA that uses the Twitter API and DeepL API to search for tweets and translate them in one screen.
 
 ![](/tweet-translator.gif)
 
-Herokuへのデプロイを想定して実装を行っている（現在はAPIの制限等があるため公開は行っていない）
+Herokuへのデプロイを想定して実装を行っています（現在はAPIの制限等があるため公開は行っていません）。
 
 # root
 
