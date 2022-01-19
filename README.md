@@ -10,7 +10,7 @@ Herokuへのデプロイを想定して実装を行っています（現在はAP
 # root
 
 ## Pipfile, Pipfile.lock
-使用しているPythonライブラリの管理をpipenvで行うためのファイル。
+使用しているPythonライブラリの管理をpipenvで行うためのファイル
 
 * Flask: ウェブアプリケーションフレームワーク
 * Flask-RESTful: Flask上でREST APIを実装するライブラリ
@@ -19,19 +19,19 @@ Herokuへのデプロイを想定して実装を行っています（現在はAP
 * Gunicorn: WSGIを実装するHTTPサーバーのライブラリ。Flaskをサーバ上で動かす
 
 ## Procfile
-Herokuでサーバを立てるためにHeroku側で実行するコマンドを指定するファイル。
+Herokuでサーバを立てるためにHeroku側で実行するコマンドを指定するファイル
 
 ## requirements.txt
-Heroku上にインストールするPythonライブラリのリストを指定するファイル。
+Heroku上にインストールするPythonライブラリのリストを指定するファイル
 
 ## runtime.txt
-Herokuで走らせるPythonのバージョンを指定するファイル。
+Herokuで走らせるPythonのバージョンを指定するファイル
 
 # backend
-Pythonで記述。フレームワークにはFlaskを使用。REST APIを実装し、クライアントからのリクエストに応える。
+Pythonで記述。フレームワークにはFlaskを使用。REST APIを実装し、クライアントからのリクエストに応える
 
 ## main.py
-サーバ上でアプリを走らせるためのエントリポイントとなるプログラム。
+サーバ上でアプリを走らせるためのエントリポイントとなるプログラム
 
 ## config.py（未追跡）
 APIキー等を管理するモジュール
@@ -43,22 +43,22 @@ APIキー等を管理するモジュール
 外部APIとやり取りするクラスなどをまとめたパッケージ
 
 # frontend
-Vue CLIを使ったVue.jsのフロントエンド開発場所。ビルドするとコードをdistディレクトリに展開する。以下のファイルは基本的にVue CLIが自動的に生成するテンプレートが元になっている。
+Vue CLIを使ったVue.jsのフロントエンド開発場所。ビルドするとコードをdistディレクトリに展開する。以下のファイルは基本的にVue CLIが自動的に生成するテンプレートが元になっている
 
 ## .browserslistrc
-CSSで付与するベンダープレフィクスに関して、サポートするブラウザの範囲を指定するファイル。
+CSSで付与するベンダープレフィクスに関して、サポートするブラウザの範囲を指定するファイル
 
 ## .editorconfig
-コーディングスタイルに関する設定ファイル。
+コーディングスタイルに関する設定ファイル
 
 ## .eslintrc.js
-ESLint関連の設定ファイル。
+ESLint関連の設定ファイル
 
 ## babel.config.js
-Babel関連の設定ファイル。
+Babel関連の設定ファイル
 
 ## package.json, package-lock.json
-使用しているJavaScriptライブラリの管理をnpmで行うためのファイル。Vue CLIが自動的に生成するため、今回使用しなかったライブラリも含まれている（VuexやSassなど）。
+使用しているJavaScriptライブラリの管理をnpmで行うためのファイル。Vue CLIが自動的に生成するため、今回使用しなかったライブラリも含まれている（VuexやSassなど）
 
 * Vue.js: UI設計のJavaScriptフレームワーク
 * Vuetify: マテリアルデザインに則ったUIデザインのフレームワーク。コンポーネントを提供する
@@ -67,15 +67,13 @@ Babel関連の設定ファイル。
 * Babel: JavaScriptトランスコンパイラ。古いJavaScriptの書き方に変換する
 
 ## vue.config.js
-Vue関連の設定ファイル。
+Vue関連の設定ファイル
 
 ## public
-index.htmlやfaviconの配置場所。index.htmlにVueで作成したアプリが展開される。
+index.htmlやfaviconの配置場所。index.htmlにVueで作成したアプリが展開される
 
 ## src
-Vueのソース。main.jsをエントリポイントとし、App.vueとそれに依存するコンポーネントを置く。
+Vueのソース。main.jsをエントリポイントとし、App.vueとそれに依存するコンポーネントを置く
 
 # dist
-frontendでビルドしたコードを展開する場所。Flaskではここをレスポンスのテンプレートのフォルダとしている。
-
-
+frontendでビルドしたコードを展開する場所。Flaskではここをレスポンスのテンプレートのフォルダとしている
