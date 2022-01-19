@@ -5,7 +5,7 @@ This is a simple SPA that uses the Twitter API and DeepL API to search for tweet
 
 It is implemented on the assumption that it will be deployed to Heroku.
 
-# Usage
+# Usage (to try locally)
 
 Place a file (config.py) like the one below with the API key in the backend directory.
 
@@ -22,7 +22,7 @@ TWITTER_ACCESS_TOKEN_SECRET = '*** Twitter Access Token Secret ***'
 │    └─ config.py
 ```
 
-To try it in local, run the following pipenv command.
+Run the following pipenv command.
 
 ```
 pipenv install
