@@ -9,6 +9,7 @@ flask-restful = "*"
 tweepy = "*"
 deepl = "*"
 gunicorn = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

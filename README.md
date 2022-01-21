@@ -5,21 +5,16 @@ This is a simple SPA that uses the Twitter API and DeepL API to search for tweet
 
 It is implemented on the assumption that it will be deployed to Heroku.
 
-# Usage (to try locally)
+# Usage (local)
 
-Place a file (config.py) like the one below with the API key in the backend directory.
-
-```python
-DEEPL_API_KEY = '*** DeepL API Authorization Key ***'
-TWITTER_API_KEY = '*** Twitter API Key ***'
-TWITTER_API_KEY_SECRET = '*** Twitter API Key Secret ***'
-TWITTER_ACCESS_TOKEN = '*** Twitter Access Token ***'
-TWITTER_ACCESS_TOKEN_SECRET = '*** Twitter Access Token Secret ***'
-```
+Place a .env file like the one below with your API key in the root directory of tweet-translator.
 
 ```
-├─ backend
-│    └─ config.py
+DEEPL_API_KEY="*** DeepL API Authorization Key ***"
+TWITTER_API_KEY="*** Twitter API Key ***"
+TWITTER_API_KEY_SECRET="*** Twitter API Key Secret ***"
+TWITTER_ACCESS_TOKEN="*** Twitter Access Token ***"
+TWITTER_ACCESS_TOKEN_SECRET="*** Twitter Access Token Secret ***"
 ```
 
 Run the following pipenv command.
