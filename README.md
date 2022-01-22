@@ -7,7 +7,7 @@ It is implemented on the assumption that it will be deployed to Heroku.
 
 # Usage (local)
 
-Place a .env file like the one below with your API key in the root directory of tweet-translator.
+Place a .env file like the one below with your API keys in the root directory of tweet-translator.
 
 ```
 DEEPL_API_KEY="*** DeepL API Authorization Key ***"
