@@ -3,9 +3,7 @@ This is a simple SPA that uses the Twitter API and DeepL API to search for tweet
 
 ![](/tweet-translator.gif)
 
-It is implemented on the assumption that it will be deployed to Heroku.
-
-# Usage (local)
+# Usage
 
 Place a .env file like the one below with your API keys in the root directory of tweet-translator.
 
